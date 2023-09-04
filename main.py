@@ -24,13 +24,13 @@ for file in file_list:
   leaves_list = []
   get_leaves(root, leaves_list)
   print(leaves_list)
-  # with Image.open(file + ".png") as im:
-  #   print(im.format, im.size, im.mode)
-  #   draw = ImageDraw.Draw(im)
-  #   for element in leaves_list:
-  #     print(element.attrib['bounds'])
-  #     bounds = re.findall('[0-9]+', element.attrib['bounds'])
-  #     bounds = list(map(int, bounds))
-  #     print(bounds)
-  #     draw.rectangle(bounds, fill = None, outline = ImageColor.getrgb("yellow"), width=5)
-  #   im.save(file + ".annotated.png")
+  with Image.open(file + ".png") as im:
+    print(im.format, im.size, im.mode)
+    draw = ImageDraw.Draw(im)
+    for element in leaves_list:
+      print(element.attrib['bounds'])
+      bounds = re.findall('[0-9]+', element.attrib['bounds'])
+      bounds = list(map(int, bounds))
+      print(bounds)
+      draw.rectangle(bounds, fill = None, outline = ImageColor.getrgb("yellow"), width=5)
+    im.save(file + ".annotated.png")
