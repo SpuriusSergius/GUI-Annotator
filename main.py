@@ -32,10 +32,10 @@ for file in file_list:
   with Image.open(file + ".png") as im:
     draw = ImageDraw.Draw(im)
 
-    # for each leaf element, use the element's bounds valye to draw a rectangle on the png given.
+    # for each leaf element, use the element's bounds value to draw a rectangle on the png given.
     for element in leaves_list:
 
-      # bounds is a string, convert into a lust of integers
+      # bounds is a string, convert into a list of integers
       bounds = re.findall('[0-9]+', element.attrib['bounds'])
       bounds = list(map(int, bounds))
 
